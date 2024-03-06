@@ -5,10 +5,9 @@ public:
         int sum=0;
         for(int i=0;i<nums.size();i++){
             sum+=nums[i];
-            int n=nums[i];
-            while(n>0){
-                dsum+=n%10;
-                n=n/10;
+            while(nums[i]>0){
+                dsum+=nums[i]%10;
+                nums[i]/=10;
             }
         }
         return abs(dsum-sum);
