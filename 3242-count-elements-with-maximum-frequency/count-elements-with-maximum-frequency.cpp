@@ -5,11 +5,13 @@ public:
         int max_freq=count(nums.begin(),nums.end(),nums[0]);
         int num=1;
         for(int i=1;i<nums.size();i++){
-            if((nums[i]!=nums[i-1]) && ((count(nums.begin(),nums.end(),nums[i]))==max_freq)){
+            int t=(count(nums.begin(),nums.end(),nums[i]));
+            if((nums[i]!=nums[i-1]) && (t)==max_freq){
                 num++;
+                continue;
             }
-            else if(nums[i]!=nums[i-1] && (count(nums.begin(),nums.end(),nums[i]))>max_freq){
-                max_freq=count(nums.begin(),nums.end(),nums[i]);
+            else if(nums[i]!=nums[i-1] && t>max_freq){
+                max_freq=t;
                 num=1;
             }
         }
