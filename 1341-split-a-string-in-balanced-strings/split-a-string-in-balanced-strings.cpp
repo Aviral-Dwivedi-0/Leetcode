@@ -6,16 +6,13 @@ public:
         for(int i=0;i<s.length();i++){
             if(s[i]=='R'){
                 orientation++;
-                if(orientation==0){
-                    count++;
-                }
             }
-            else{
+            else if(s[i]=='L'){
                 orientation--;
-                if(orientation==0){
-                    count++;
-                }
             }  
+            if(orientation==0){
+                count++;
+            }
         }
         return count;
     }
