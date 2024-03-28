@@ -4,7 +4,7 @@ public:
         vector<int> answer;
         for(int i=0;i<n;i++){
             answer.push_back(nums[i]);
-            answer.push_back(nums[(n)+i]);
+            answer.push_back(nums[n+i]);
         }
         return answer;
     }
