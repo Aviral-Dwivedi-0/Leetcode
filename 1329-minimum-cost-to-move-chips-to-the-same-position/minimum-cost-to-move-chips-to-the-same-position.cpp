@@ -7,7 +7,6 @@ public:
             if(position[i]%2==0) even++;
             else odd++;
         }
-        if(even>odd) return odd;
-        return even;
+        return min(odd,even);
     }
 };
