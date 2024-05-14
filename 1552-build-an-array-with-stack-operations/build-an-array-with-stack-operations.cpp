@@ -8,7 +8,7 @@ public:
             if(current==target){
                 return answer;
             }
-            if(i==target[k]){
+            else if(i==target[k]){
                 answer.push_back("Push");
                 k++;
                 current.push_back(i);
