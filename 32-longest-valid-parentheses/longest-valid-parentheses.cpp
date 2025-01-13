@@ -3,7 +3,6 @@ public:
     int longestValidParentheses(string s) {
         int ans = 0, sum = 0, n = s.size();
 
-        // Left to right pass
         int left = 0, right = 0;
         for (int i = 0; i < n; i++) {
             if (s[i] == '(') left++;
@@ -14,7 +13,6 @@ public:
             
         }
 
-        // Right to left pass
         left = right = 0;
         for (int i = n - 1; i >= 0; i--) {
             if (s[i] == '(') left++;
