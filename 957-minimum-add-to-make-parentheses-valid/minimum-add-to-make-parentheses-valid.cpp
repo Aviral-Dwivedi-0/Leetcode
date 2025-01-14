@@ -1,13 +1,6 @@
 class Solution {
 public:
     int minAddToMakeValid(string s) {
-        // int fc=0;
-        // int pc=0;
-        // for(int i=0;i<s.size();i++){
-        //     if(s[i]=='(') fc++;
-        //     else pc++;
-        // }
-        // return abs(pc-fc);
         int forward=0;
         int backward=0;
         for(int i=0;i<s.size();i++){
