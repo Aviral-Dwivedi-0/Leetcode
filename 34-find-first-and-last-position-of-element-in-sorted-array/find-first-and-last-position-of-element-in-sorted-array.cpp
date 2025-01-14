@@ -8,13 +8,8 @@ public:
         while(f<=l){
             int mid=f+(l-f)/2;
             if(nums[mid]==target){
-                // if(nums[mid-1]!=target){
                 fi=mid;
-                // }
-                // else{
-                    l=mid-1;
-                //     continue;
-                //}
+                l=mid-1;
             }
             else if(nums[mid]<target){
                 f=mid+1;
@@ -30,13 +25,8 @@ public:
         while(f<=l){
             int mid=f+(l-f)/2;
             if(nums[mid]==target){
-                // if(nums[mid+1]!=target){
                 li=mid;
-                // }
-                // else{
-                    f=mid+1;
-                //     continue;
-                //}
+                f=mid+1;
             }
             else if(nums[mid]<target){
                 f=mid+1;
