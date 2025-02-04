@@ -16,13 +16,6 @@ public:
                 sum=0;
             }
         }
-        // if(nums[n-1]>nums[n-2]){
-        //     sum+=nums[n-1];
-        //     maximum=max(maximum,sum);
-        // }
-        // else{
-        //     maximum=max(maximum,nums[n-1]);
-        // }
         return maximum;
     }
 };
