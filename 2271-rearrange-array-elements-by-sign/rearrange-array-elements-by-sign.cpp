@@ -1,16 +1,31 @@
 class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
-        vector<int> positive;
-        vector<int> negative;
-        vector<int> answer;
-        for(auto i: nums){
-            if(i>0) positive.push_back(i);
-            else negative.push_back(i);
+        int n=nums.size();
+        vector<int> answer(n,0);
+        int even=0;
+        int odd=1;
+        int i=0;
+        while(even<n && odd<n){
+            if(nums[i]>0){
+                answer[even]=nums[i];
+                even+=2;
+            }
+            else {
+                answer[odd]=nums[i];
+                odd+=2;
+            }
+            i++;
         }
-        for(int i=0;i<positive.size();i++){
-            answer.push_back(positive[i]);
-            answer.push_back(negative[i]);
+        while(even<=n-1){
+            answer[even]=nums[i];
+            i++;
+            even+=2;
+        }
+        while(odd<=n-1){
+            answer[odd]=nums[i];
+            i++;
+            odd+=2;
         }
         return answer;
     }
