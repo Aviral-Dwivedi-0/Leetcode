@@ -8,7 +8,6 @@ public:
         int j=0;
         int n=nums1.size();
         int m=nums2.size();
-        int k=0;
         vector<int> temp;
         while(i<n && j<m){
             if(nums1[i][0]==nums2[j][0]){
@@ -17,8 +16,6 @@ public:
                 answer.push_back(temp);
                 temp.pop_back();
                 temp.pop_back();
-                cout<<answer[k][0]<<","<<answer[k][1]<<endl;;
-                k++;
                 i++;
                 j++;
             }
