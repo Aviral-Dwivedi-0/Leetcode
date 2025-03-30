@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> partitionLabels(string s) {
+        //check
         unordered_map<char, int> last_occurrence;
         for (int i = 0; i < s.size(); i++) {
             last_occurrence[s[i]] = i;
