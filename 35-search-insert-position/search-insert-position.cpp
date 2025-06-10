@@ -1,11 +1,7 @@
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
-        for(int i=0;i<nums.size();i++){
-            if(nums[i]>=target){
-                return i ;
-            }
-        }
-        return nums.size();
+        int answer=lower_bound(nums.begin(),nums.end(),target)-nums.begin();
+        return answer;
     }
 };
