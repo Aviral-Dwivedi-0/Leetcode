@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
+        //Solution 1
         int f=0;
         int l=nums.size()-1;
         int fi=-1;
@@ -37,5 +38,6 @@ public:
         }
         answer.push_back(li);
         return answer;
+
     }
 };
