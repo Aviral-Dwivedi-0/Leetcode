@@ -4,7 +4,7 @@ public:
         long long n=bloomDay.size();
         if(n<(long long)m*(long long)k) return -1;
         int high=*max_element(bloomDay.begin(),bloomDay.end());
-        int low=1;
+        int low=*min_element(bloomDay.begin(),bloomDay.end());
         while(low<=high){
             int mid=low+(high-low)/2;
             int canmake=0;
