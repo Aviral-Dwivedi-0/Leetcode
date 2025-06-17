@@ -3,23 +3,17 @@ public:
     int required(vector<int>& weights,int mid){
         int day=1,capacity=0;
         for(int i=0;i<weights.size();i++){
-            if(weights[i]+capacity>mid){
+            capacity+=weights[i];
+            if(capacity>mid){
                 day++;
                 capacity=weights[i];
-            }
-            else{
-                capacity+=weights[i];
             }
         }
         return day;
     }
     int shipWithinDays(vector<int>& weights, int days) {
-        int low=0;
-        int high=0;
-        for(int i=0;i<weights.size();i++){
-            low=max(low,weights[i]);
-            high+=weights[i];
-        }
+        int low = *max_element(weights.begin(),weights.end());
+        int high = accumulate(weights.begin(),weights.end(),0);
         while(low<=high){
             int mid=low+(high-low)/2;
             int req_days=required(weights,mid);
