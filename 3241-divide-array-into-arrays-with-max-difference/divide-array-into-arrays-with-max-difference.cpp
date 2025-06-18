@@ -9,9 +9,7 @@ public:
                 temp.push_back(nums[i]);
                 answer.push_back(temp);
                 if(temp[2]-temp[0]>k) return {};
-                temp.pop_back();
-                temp.pop_back();
-                temp.pop_back();
+                temp.erase(temp.begin(),temp.end());
 
             }
             else{
