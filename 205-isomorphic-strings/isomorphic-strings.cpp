@@ -1,8 +1,8 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        set<char> visited;
-        map<char,char> mpp;
+        unordered_set<char> visited;
+        unordered_map<char,char> mpp;
         for(int i=0;i<s.size();i++){
             cout<<0;
             if(mpp.find(s[i]) != mpp.end()){
