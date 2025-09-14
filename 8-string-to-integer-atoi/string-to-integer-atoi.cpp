@@ -1,6 +1,7 @@
 class Solution {
 public:
     int myAtoi(string s) {
+        
         while(s[0]==' '){
             s.erase(0,1);
         }
