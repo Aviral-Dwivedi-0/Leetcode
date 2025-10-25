@@ -1,6 +1,7 @@
 class Solution {
 public:
     int totalMoney(int n) {
+        //check
         int total=0;
         int count=1;
         int week=0;
