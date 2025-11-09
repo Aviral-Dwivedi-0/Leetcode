@@ -1,16 +1,14 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        int hash[26]={0};
-        int goal[26]={0};
-        for(int i=0;i<s.size();i++){
-            hash[s[i]-'a']++;
+        if(s.size()!=t.size()) return false;
+        map<char,int> mpp1;
+        for(auto i:s){
+            mpp1[i]++;
         }
-        for(int j=0;j<t.size();j++){
-            goal[t[j]-'a']++;
-        }
-        for(int i=0;i<26;i++){
-            if(hash[i]!=goal[i]) return false;
+        for(auto i:t){
+            mpp1[i]--;
+            if(mpp1[i]<0) return false;
         }
         return true;
     }
