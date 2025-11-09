@@ -4,7 +4,6 @@ public:
         unordered_set<char> visited;
         unordered_map<char,char> mpp;
         for(int i=0;i<s.size();i++){
-            cout<<0;
             if(mpp.find(s[i]) != mpp.end()){
                 if(mpp[s[i]] != t[i]){
                     return false;
