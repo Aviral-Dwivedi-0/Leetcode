@@ -1,17 +1,16 @@
 class Solution {
 public:
     bool rotateString(string s, string goal) {
-        if(s==goal) return true;
-        int ls=s.size();
-        int gs=goal.size();
-        if(ls!=gs) return false;
-        int counter=0;
-        while(counter<ls){
+        int ol=s.size();
+        int gl=goal.size();
+        if(ol!=gl) return false;
+        int counter=ol;
+        while(counter>0){
             char temp=s[0];
-            s=s.substr(1,ls);
+            s=s.substr(1,ol);
             s+=temp;
             if(s==goal) return true;
-            counter++;
+            counter--;
         }
         return false;
     }
