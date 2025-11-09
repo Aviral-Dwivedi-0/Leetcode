@@ -14,8 +14,6 @@ public:
                 if(visited.find(t[i]) != visited.end()) return false;
                 mpp[s[i]]=t[i];
                 visited.insert(t[i]);
-                // if(mpp.find(t[i])!= mpp.end() && mpp[t[i]]!=s[i]) return false;
-                // mpp[t[i]]=s[i];
             }
         }
         return true;
