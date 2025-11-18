@@ -1,37 +1,29 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        s+=' ';
-        vector<string> rev;
-        int start=-1;
-        int end=-1;
-        bool word_continue=false;
-        bool word_inserted=false;
-        for(int i=0;i<s.size();i++){
+        int t=s.size();
+        if(s[0]==' ' || s[t-1]==' ' ){
+            while(s[0]==' '){
+                s=s.substr(1,s.size());
+            }
+            int l=s.size();
+            while(s[l-1]==' '){
+                s=s.substr(0,l-1);
+                l--;
+            }
+        }
+        int nl=s.size();
+        string word="";
+        string answer="";
+        for(int i=nl-1;i>=0;i--){
             if(s[i]!=' '){
-                word_inserted=false;
-                if(!word_continue){
-                    start=i;
-                    word_continue=true;
-                }
-                end=i;
+                word=s[i]+word;
             }
-            else{
-                word_continue=false;
-                if(word_inserted==false && start>=0){
-                    string t= s.substr(start,end-start+1);
-                    rev.push_back(t);
-                    word_inserted=true;
-                }
+            else if(s[i+1]!=' '){
+                answer+=word+" ";
+                word="";
             }
         }
-        string req="";
-        for(int i=rev.size()-1;i>=0;i--){
-            if(i!=0)
-            req+=rev[i]+" ";
-            else
-            req+=rev[i];
-        }
-        return req;
+        return answer+word;
     }
 };
