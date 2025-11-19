@@ -1,19 +1,13 @@
 class Solution {
 public:
     int findFinalValue(vector<int>& nums, int original) {
-        int hash[2001]={0};
-        for(int i=0;i<nums.size();i++){
-            hash[nums[i]]=hash[nums[i]]+1;
+        unordered_map<int,bool> mpp;
+        for(auto it:nums){
+            mpp[it]=true;
         }
-        int loop=1;
-        while(loop){
-            if(hash[original]>0){
-                original*=2;
-            }
-            else{
-                return original;
-            }
+        while(mpp.find(original)!=mpp.end()){
+            original*=2;
         }
-        return -1;
+        return original;
     }
 };
