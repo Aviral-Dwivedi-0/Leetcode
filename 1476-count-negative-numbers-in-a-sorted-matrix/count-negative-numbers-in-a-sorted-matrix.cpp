@@ -1,15 +1,20 @@
 class Solution {
 public:
     int countNegatives(vector<vector<int>>& grid) {
-        int count=0;
-        for(int i=0;i<grid.size();i++){
-            for(int j=0;j<grid[i].size();j++){
-                if(grid[i][j]<0){
-                    count+=grid[i].size()-j;
-                    break;
-                }
-            }
+        int m = grid.size(), n = grid[0].size();
+        int i = m - 1; //row
+        int j = 0;     //col
+
+        int res = 0;
+
+        while (i >= 0 && j < n) {
+            if (grid[i][j] < 0) {
+                res += n - j;
+                i--;
+            } else
+                j++;
         }
-        return count;
+
+        return res;
     }
 };
